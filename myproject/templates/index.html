@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #333; /* Dark background color */
+            overflow: hidden;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #fff; /* White color */
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #555; /* Darker background color on hover */
+        }
+
+        .navbar h1 {
+            float: left;
+            margin: 0;
+            padding: 14px 20px;
+            color: #fff; /* White color */
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        h1 {
+            color: #e74c3c; /* Red color */
+            margin-bottom: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Search Donor</a>
+        <a href="{% url 'signup' %}">Register</a>
+        <a href="{% url 'login' %}">Login</a>
+    </div>
+
+    <div class="content">
+        <h1>Welcome!</h1>
+        {% if request.user.is_authenticated %}
+            <p>Welcome, {{ request.user.username }}!</p>
+            <a href="{% url 'logout' %}">Logout</a>
+        {% else %}
+            <p>Please login or register to access the content.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
