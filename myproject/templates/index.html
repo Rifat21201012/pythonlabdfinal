@@ -17,12 +17,13 @@
         .navbar {
             background-color: #333; /* Dark background color */
             overflow: hidden;
+            color: #e74c3c; /* Red color */
         }
 
         .navbar a {
             float: left;
             display: block;
-            color: #fff; /* White color */
+            color: inherit; /* Inherit color from parent (.navbar) */
             text-align: center;
             padding: 14px 20px;
             text-decoration: none;
@@ -32,13 +33,6 @@
 
         .navbar a:hover {
             background-color: #555; /* Darker background color on hover */
-        }
-
-        .navbar h1 {
-            float: left;
-            margin: 0;
-            padding: 14px 20px;
-            color: #fff; /* White color */
         }
 
         .navbar a i {
@@ -58,7 +52,6 @@
 </head>
 <body>
     <div class="navbar">
-        <h1><i class="fas fa-home"></i> My Website</h1>
         <a href="#"><i class="fas fa-home"></i> Home</a>
         <a href="#"><i class="fas fa-info-circle"></i> About</a>
         <a href="#"><i class="fas fa-search"></i> Search Donor</a>
