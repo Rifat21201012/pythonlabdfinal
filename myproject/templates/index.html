@@ -18,10 +18,12 @@
             background-color: #333; /* Dark background color */
             overflow: hidden;
             color: #e74c3c; /* Red color */
+            display: flex;
+            justify-content: center; /* Align items horizontally to the center */
+            align-items: center; /* Align items vertically to the center */
         }
 
         .navbar a {
-            float: left;
             display: block;
             color: inherit; /* Inherit color from parent (.navbar) */
             text-align: center;
@@ -29,6 +31,7 @@
             text-decoration: none;
             font-size: 16px;
             transition: background-color 0.3s;
+            margin: 0 10px; /* Add margin between navigation items */
         }
 
         .navbar a:hover {
