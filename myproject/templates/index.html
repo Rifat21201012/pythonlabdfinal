@@ -5,17 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome!</title>
     <style>
-        /* Reset styles and global settings */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa; /* Light background color */
-            color: #333; /* Dark text color */
-            line-height: 1.6;
         }
 
-        /* Navbar styling */
         .navbar {
             background-color: #333; /* Dark background color */
             overflow: hidden;
@@ -24,9 +19,9 @@
         .navbar a {
             float: left;
             display: block;
-            color: #fff; /* White text color */
+            color: #fff; /* White color */
             text-align: center;
-            padding: 15px 20px;
+            padding: 14px 20px;
             text-decoration: none;
             font-size: 16px;
             transition: background-color 0.3s;
@@ -39,80 +34,39 @@
         .navbar h1 {
             float: left;
             margin: 0;
-            padding: 15px 20px;
-            color: #fff; /* White text color */
+            padding: 14px 20px;
+            color: #fff; /* White color */
         }
 
-        /* Content area styling */
         .content {
-            padding: 40px;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
         }
 
         h1 {
             color: #e74c3c; /* Red color */
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-
-        p {
-            font-size: 18px;
             margin-bottom: 30px;
-        }
-
-        /* Button styling */
-        .btn {
-            display: inline-block;
-            padding: 12px 24px;
-            background-color: #e74c3c; /* Red color */
-            color: #fff; /* White text color */
-            text-decoration: none;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
-
-        .btn:hover {
-            background-color: #c0392b; /* Darker red color on hover */
-        }
-
-        /* Footer styling */
-        footer {
             text-align: center;
-            padding: 20px 0;
-            background-color: #333;
-            color: #fff;
         }
     </style>
 </head>
 <body>
     <div class="navbar">
-        <h1>My Website</h1>
-        <a href="#" class="active">Home</a>
+
+        <a href="#">Home</a>
         <a href="#">About</a>
         <a href="#">Search Donor</a>
-        <a href="{% url 'signup' %}" class="btn">Register</a>
-        <a href="{% url 'login' %}" class="btn">Login</a>
+        <a href="{% url 'signup' %}">Register</a>
+        <a href="{% url 'login' %}">Login</a>
     </div>
 
     <div class="content">
         <h1>Welcome!</h1>
         {% if request.user.is_authenticated %}
             <p>Welcome, {{ request.user.username }}!</p>
-            <a href="{% url 'logout' %}" class="btn">Logout</a>
+            <a href="{% url 'logout' %}">Logout</a>
         {% else %}
             <p>Please login or register to access the content.</p>
-            <a href="{% url 'signup' %}" class="btn">Get Started</a>
-            <a href="{% url 'login' %}" class="btn">Login</a>
         {% endif %}
     </div>
-
-    <footer>
-        &copy; 2024 My Website | All Rights Reserved
-    </footer>
 </body>
 </html>
