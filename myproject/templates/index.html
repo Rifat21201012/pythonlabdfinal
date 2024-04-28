@@ -12,15 +12,17 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f1f1f1; /* Light grey background color */
         }
 
         .navbar {
             background-color: #333; /* Dark background color */
             overflow: hidden;
-            color: #e74c3c; /* Red color */
+            color: #fff; /* White text color */
             display: flex;
             justify-content: center; /* Align items horizontally to the center */
             align-items: center; /* Align items vertically to the center */
+            padding: 10px 0; /* Add padding to the top and bottom */
         }
 
         .navbar a {
@@ -31,45 +33,55 @@
             text-decoration: none;
             font-size: 16px;
             transition: background-color 0.3s;
-            margin: 0 10px; /* Add margin between navigation items */
         }
 
         .navbar a:hover {
             background-color: #555; /* Darker background color on hover */
         }
 
-        .navbar a i {
-            margin-right: 5px; /* Spacing between icon and text */
-        }
-
         .content {
             padding: 20px;
+            text-align: center;
         }
 
         h1 {
             color: #e74c3c; /* Red color */
             margin-bottom: 30px;
-            text-align: center;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        .btn {
+            background-color: #e74c3c; /* Red color */
+            color: #fff; /* White text color */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            margin: 0 10px; /* Add margin between buttons */
+        }
+
+        .btn:hover {
+            background-color: #c0392b; /* Darker red on hover */
         }
     </style>
 </head>
 <body>
     <div class="navbar">
-        <a href="#"><i class="fas fa-home"></i> Home</a>
+        <a href="{% url 'home' %}"><i class="fas fa-home"></i> Home</a>
         <a href="#"><i class="fas fa-info-circle"></i> About</a>
         <a href="#"><i class="fas fa-search"></i> Search Donor</a>
-        <a href="{% url 'signup' %}"><i class="fas fa-user-plus"></i> Register</a>
-        <a href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i> Login</a>
+        <a href="{% url 'signup' %}" class="btn">Register</a>
+        <a href="{% url 'login' %}" class="btn">Login</a>
     </div>
 
     <div class="content">
-        <h1>Welcome!</h1>
-        {% if request.user.is_authenticated %}
-            <p>Welcome, {{ request.user.username }}!</p>
-            <a href="{% url 'logout' %}">Logout</a>
-        {% else %}
-            <p>Please login or register to access the content.</p>
-        {% endif %}
+        <h1>Welcome to Our Website!</h1>
+        <p>This is the homepage of our website. Feel free to explore!</p>
     </div>
 
     <!-- Font Awesome CDN for icons -->
