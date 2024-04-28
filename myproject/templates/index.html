@@ -60,13 +60,15 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.2s;
             text-decoration: none;
             margin: 0 10px; /* Add margin between buttons */
+            display: inline-block;
         }
 
         .btn:hover {
             background-color: #c0392b; /* Darker red on hover */
+            transform: scale(1.05); /* Scale button slightly on hover */
         }
     </style>
 </head>
@@ -82,6 +84,8 @@
     <div class="content">
         <h1>Welcome to Our Website!</h1>
         <p>This is the homepage of our website. Feel free to explore!</p>
+        <a href="{% url 'signup' %}" class="btn">Join as a Donor</a>
+        <a href="#" class="btn">Search Donor</a>
     </div>
 
     <!-- Font Awesome CDN for icons -->
